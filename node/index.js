@@ -12,7 +12,7 @@ const client = new Client({
 
 });
 
-//client.connect();
+client.connect();
 
 const createTable = async () =>{
     await client.query(`CREATE TABLE IF NOT EXISTS users(id serial PRIMARY KEY, 
@@ -20,7 +20,7 @@ const createTable = async () =>{
         age INT NOT NULL );`)
 }; //定義一個非同步函數
 
-//createTable();
+createTable();
 
 const app = express();
 app.use(express.json());
